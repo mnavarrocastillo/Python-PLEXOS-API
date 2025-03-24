@@ -1,19 +1,23 @@
 
-import os, sys, re, clr
+import os, sys, re
 import subprocess as sp
 import pandas as pd
 from datetime import datetime
 
 from shutil import copyfile
+import pythonnet
+pythonnet.load("coreclr")
 
-plexospath = 'C:/Program Files/Energy Exemplar/PLEXOS 10.0'
-sys.path.append('C:/Program Files/Energy Exemplar/PLEXOS 10.0 API')
+plexospath = r"""C:\Program Files\Energy Exemplar\PLEXOS 10.0"""
+sys.path.append(r"""C:\Program Files\Energy Exemplar\PLEXOS 10.0""")
+
+import clr
 clr.AddReference('PLEXOS_NET.Core')
 clr.AddReference('EEUTILITY')
 clr.AddReference('EnergyExemplar.PLEXOS.Utility')
 
 # .NET related imports
-from PLEXOS_NET.Core import DatabaseCore, Solution, PLEXOSConnect
+from PLEXOS_NET.Core import DatabaseCore, Solution
 from EEUTILITY.Enums import *
 from EnergyExemplar.PLEXOS.Utility.Enums import *
 
@@ -174,7 +178,7 @@ def query_results(sol_file, csv_file):
                         '1')
                
     df = pd.read_csv(csv_file)
-    wb = pd.ExcelWriter(re.sub('\.csv$', '.xlsx', csv_file))
+    wb = pd.ExcelWriter(re.sub('\\.csv$', '.xlsx', csv_file))
     df.to_excel(wb, 'Query') # 'Query' is the name of the worksheet
 
     wb.close()

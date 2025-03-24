@@ -10,7 +10,7 @@ P9 Tested
 import os, sys, clr
 
 # load PLEXOS assemblies
-sys.path.append('C:\Program Files\Energy Exemplar\PLEXOS 9.0 API')
+sys.path.append('C:/Program Files/Energy Exemplar/PLEXOS 10.0 API')
 clr.AddReference('EEUTILITY')
 clr.AddReference('EnergyExemplar.PLEXOS.Utility')
 
