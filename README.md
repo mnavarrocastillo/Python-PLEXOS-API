@@ -3,6 +3,30 @@ https://github.com/EnergyExemplarNorthAmerica/Python-PLEXOS-API
 
 A repository of simple Python examples for use with the PLEXOS API. 
 
+## Installations
+
+To get the scripts running on your forked version, follow these additional installation steps:
+
+1. **Install Anaconda:**
+   - Download and install Anaconda from [Anaconda's official website](https://www.anaconda.com/download/).
+
+2. **Install .NET SDKs:**
+   - Download and install both the .NET 9.0 SDK and the .NET 5.0 SDK from [Microsoft's .NET Downloads](https://dotnet.microsoft.com/en-us/download).
+
+3. **Install Required Python Packages:**
+   Run the following commands in your terminal:
+   ```bash
+   pip install dotnet
+   pip install pythonnet
+   ```
+
+4. **Install Python Cloud SDK:**
+   Download the Python SDK Cloud Toolkit from the [PLEXOS Cloud Marketplace](https://marketplace-ui-eeprod-na.energyexemplar.com/market/tools/all). Navigate to the directory containing the `.whl` file and run:
+   ```bash
+   pip install .\eecloud-20250317.2-py3-none-any.whl
+   ```
+##
+
 **This branch for PLEXOS 9 is still in progress.** Please note that this repository 
 is not a supported product of Energy Exemplar, but rather a help to the user which 
 is a free time activity for dedicated fans of the product.
